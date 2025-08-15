@@ -1,6 +1,7 @@
 before:
   hooks:
     - go mod tidy
+
 release:
   prerelease: auto  # 自动识别 beta、rc 作为预发布
 
@@ -30,6 +31,7 @@ builds:
       - -trimpath
     ldflags:
       - -s -w -X main.Version={{ .Version }} -X main.CurrentCommit={{ .ShortCommit }}
+    main: cmd/memwatch/main.go  # 指定 main.go 文件路径
 
 archives:
   - format: tar.gz
@@ -53,4 +55,4 @@ changelog:
       - '^test:'
       - '^chore:'
       - Merge pull request
-      - Merge branch 
+      - Merge branch
