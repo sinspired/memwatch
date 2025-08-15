@@ -1,3 +1,5 @@
+version: 2  # 指定版本为 v2
+
 before:
   hooks:
     - go mod tidy
@@ -34,7 +36,8 @@ builds:
     main: cmd/memwatch/main.go  # 指定 main.go 文件路径
 
 archives:
-  - format: tar.gz
+  - formats:  # 使用 formats 而不是 format
+      - tar.gz
     name_template: >-
       {{ .ProjectName }}_
       {{- title .Os }}_
@@ -45,7 +48,8 @@ archives:
       {{- else }}{{ .Arch }}{{ end }}
     format_overrides:
       - goos: windows
-        format: zip
+        formats:
+          - zip
 
 changelog:
   sort: asc
