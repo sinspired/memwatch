@@ -4,7 +4,6 @@ package memwatch
 
 import (
     "fmt"
-    "os"
     "os/exec"
     "strconv"
     "strings"
