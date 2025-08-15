@@ -17,15 +17,19 @@
 ## 安装
 
 - **使用 go install（推荐）:**
+
   ```bash
   go install github.com/sinspired/memwatch/cmd/memwatch@latest
   ```
+
 - **从源码构建:**
+
   ```bash
   git clone https://github.com/sinspired/memwatch
   cd memwatch/cmd/memwatch
   go build -o memwatch
   ```
+
 - **运行环境:**
   - **Go 版本:** 建议 Go 1.20+。
   - **平台:** 主流桌面/服务器平台（Windows/macOS/Linux），以目标平台的进程探测权限为准。
@@ -70,20 +74,26 @@ Options:
 ## 示例
 
 - **最简用法（位置参数作为进程名）:**
+
   ```bash
   memwatch myproc
   ```
+
 - **更细采样与更大步长:**
+
   ```bash
   memwatch -interval 500ms -stepMB 20 myproc
   ```
+
 - **显式指定名称（长/短旗标）:**
+
   ```bash
   memwatch -name myproc
   memwatch -n myproc
   ```
 
 - **示例输出:**
+
   ```text
   [2025-08-12T22:51:04+08:00] Start: PID=12345 mem=120.34 MB
   [2025-08-12T22:52:10+08:00] Half reached in 1m6s, mem=60.12 MB
