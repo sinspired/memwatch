@@ -68,7 +68,7 @@ func main() {
 	for ev := range events {
 		switch ev.Kind {
 		case memwatch.EventStart:
-			fmt.Printf("[%s] Start(First print at >=20%% changed): PID=%d mem=%.2f MB\n",
+			fmt.Printf("[%s] Start: PID=%d mem=%.2f MB\n",
 				ev.Time.Format(time.RFC3339),
 				ev.PID,
 				float64(ev.MemoryBytes)/1024/1024)
